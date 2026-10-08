@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QualiData IA | Demonstração</title>
+<style>
+:root{--navy:#061b49;--blue:#0756c9;--cyan:#22c8f4;--yellow:#ffdf19;--ink:#102348;--muted:#64748b;--bg:#f3f7fc;--white:#fff;--line:#e2eaf5}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+.topbar{background:linear-gradient(110deg,#041638,#073b88);color:#fff;padding:16px 5%;display:flex;align-items:center;justify-content:space-between;gap:16px;box-shadow:0 5px 24px #04163824}
+.brand{display:flex;align-items:center;gap:12px}.logo{font-size:29px;font-weight:900;letter-spacing:-1.5px;color:var(--yellow)}.logo small{display:block;font-size:10px;letter-spacing:2px;color:#fff;font-weight:700;margin-top:-3px}.pill{font-size:12px;background:#ffffff18;border:1px solid #ffffff35;padding:8px 12px;border-radius:999px}
+main{max-width:1180px;margin:30px auto;padding:0 20px}.hero{background:linear-gradient(120deg,#061b49,#0756c9);border-radius:24px;padding:34px;color:white;display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center;overflow:hidden;position:relative}.eyebrow{color:var(--yellow);font-size:12px;letter-spacing:2px;font-weight:800;text-transform:uppercase}.hero h1{font-size:clamp(30px,4vw,48px);line-height:1.08;margin:12px 0}.hero p{color:#dbeafe;line-height:1.7;max-width:580px}.hero .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer;font-size:14px}.btn-primary{background:var(--yellow);color:#09204c}.btn-outline{background:#ffffff12;color:#fff;border:1px solid #ffffff55}.orb{justify-self:center;width:210px;height:210px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#4fe2ff,#0965df 55%,#061b49 76%);box-shadow:0 0 0 16px #ffffff0c,0 0 65px #16bfff4c;font-size:92px}
+.grid{display:grid;grid-template-columns:1fr 1.05fr;gap:22px;margin-top:22px}.panel{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 10px 35px #18335a08;overflow:hidden}.panel-head{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:10px}.panel-head h2{font-size:18px;margin:0}.sub{font-size:12px;color:var(--muted);margin-top:5px}.status{color:#07874b;background:#e9fbf1;border-radius:999px;padding:6px 10px;font-size:11px;font-weight:800}.features{padding:20px;display:grid;grid-template-columns:1fr 1fr;gap:12px}.feature{padding:16px;border:1px solid var(--line);border-radius:15px}.feature .ico{font-size:24px}.feature h3{font-size:14px;margin:9px 0 6px}.feature p{font-size:12px;color:var(--muted);line-height:1.5;margin:0}.note{margin:0 20px 20px;padding:13px 15px;border-radius:12px;background:#fff8d9;color:#725b00;font-size:12px;line-height:1.5}
+.chat{display:flex;flex-direction:column;min-height:560px}.chatbody{padding:18px;background:#f5f8fc;flex:1;min-height:360px;max-height:440px;overflow-y:auto;display:flex;flex-direction:column;gap:12px}.bubble{max-width:88%;padding:12px 14px;border-radius:15px;font-size:13px;line-height:1.5;white-space:pre-wrap;box-shadow:0 2px 5px #112b4c0a}.bot{align-self:flex-start;background:#fff;border:1px solid var(--line);border-top-left-radius:4px}.user{align-self:flex-end;background:#d9fdd3;border-top-right-radius:4px}.bubble strong{color:#0756c9}.quick{padding:12px 16px;display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid var(--line)}.quick button{border:1px solid #b9d4f4;background:#f5f9ff;color:#0756c9;padding:8px 10px;border-radius:999px;font-size:11px;font-weight:700;cursor:pointer}.compose{display:flex;gap:8px;padding:14px;border-top:1px solid var(--line)}.compose input{min-width:0;flex:1;border:1px solid #d5dfec;border-radius:12px;padding:12px;font-size:13px;outline:none}.compose input:focus{border-color:var(--blue)}.send{background:var(--blue);color:white;border-radius:12px;padding:0 17px}.footer{text-align:center;color:#718096;font-size:12px;padding:25px 0 10px}.footer strong{color:#18386b}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding:26px}.orb{width:130px;height:130px;font-size:60px;grid-row:1}.grid{grid-template-columns:1fr}.topbar{padding:14px 5%}.pill{display:none}.features{grid-template-columns:1fr 1fr}.chat{min-height:500px}}
+@media(max-width:420px){.features{grid-template-columns:1fr}.hero h1{font-size:32px}.chatbody{min-height:330px}}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><div class="logo">QualiData<small>TECNOLOGIA E INFORMÁTICA</small></div></div>
+  <div class="pill">✦ DEMONSTRAÇÃO DO AGENTE DE IA</div>
+</header>
+<main>
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Atendimento inteligente</div>
+      <h1>Uma nova forma de atender seus clientes.</h1>
+      <p>Conheça uma demonstração de agente de IA para a QualiData. Atendimento acolhedor, coleta de informações para orçamento e encaminhamento de solicitações — pelo site e, futuramente, pelo WhatsApp.</p>
+      <div class="actions">
+        <button class="btn btn-primary" onclick="document.getElementById('chatbox').scrollIntoView({behavior:'smooth'})">Experimentar o agente ↓</button>
+        <button class="btn btn-outline" onclick="resetChat()">Reiniciar demonstração ↻</button>
+      </div>
+    </div>
+    <div class="orb" aria-label="Assistente virtual">🤖</div>
+  </section>
+  <section class="grid">
+    <article class="panel">
+      <div class="panel-head"><div><h2>O que o agente pode fazer</h2><div class="sub">Experiência proposta para a empresa</div></div></div>
+      <div class="features">
+        <div class="feature"><div class="ico">💬</div><h3>Atendimento inicial</h3><p>Recebe o cliente e identifica como pode ajudar.</p></div>
+        <div class="feature"><div class="ico">🧾</div><h3>Pré-orçamentos</h3><p>Coleta modelo do equipamento e descrição do problema.</p></div>
+        <div class="feature"><div class="ico">💻</div><h3>Informações de serviços</h3><p>Apresenta opções de assistência técnica em informática.</p></div>
+        <div class="feature"><div class="ico">👩‍💼</div><h3>Atendente humano</h3><p>Organiza os dados para a equipe dar continuidade.</p></div>
+        <div class="feature"><div class="ico">📱</div><h3>WhatsApp e site</h3><p>Possibilidade de centralizar canais em uma solução.</p></div>
+        <div class="feature"><div class="ico">📊</div><h3>Gestão de contatos</h3><p>Futura integração com CRM e painel de oportunidades.</p></div>
+      </div>
+      <div class="note"><strong>Importante:</strong> esta é uma demo interativa com respostas demonstrativas. Não envia mensagens reais, não registra pedidos e não calcula preços oficiais.</div>
+    </article>
+    <article class="panel chat" id="chatbox">
+      <div class="panel-head"><div><h2>Assistente QualiData</h2><div class="sub">Converse com a demonstração</div></div><span class="status">● ONLINE · DEMO</span></div>
+      <div class="chatbody" id="chatbody" aria-live="polite">
+        <div class="bubble bot">Olá! 👋 Seja bem-vindo(a) à <strong>QualiData Tecnologia e Informática</strong>!<br><br>Sou o assistente virtual demonstrativo. Como posso ajudar?<br><br>Você pode perguntar sobre assistência técnica, solicitar um pré-orçamento ou pedir atendimento humano.</div>
+      </div>
+      <div class="quick">
+        <button onclick="quickSend('Quero um orçamento')">💰 Quero um orçamento</button>
+        <button onclick="quickSend('Preciso de assistência técnica')">💻 Assistência técnica</button>
+        <button onclick="quickSend('Quero falar com uma pessoa')">👩‍💼 Atendente humano</button>
+      </div>
+      <form class="compose" id="chatform"><input id="msg" autocomplete="off" placeholder="Digite sua mensagem..." aria-label="Digite sua mensagem"><button class="btn send" type="submit">Enviar ➤</button></form>
+    </article>
+  </section>
+  <div class="footer"><strong>QualiData Tecnologia e Informática</strong> · Demonstração conceitual criada pela EnirDev Tech<br>Atendimento mais próximo, organizado e inteligente.</div>
+</main>
+<script>
+const body=document.getElementById('chatbody');
+const form=document.getElementById('chatform');
+const input=document.getElementById('msg');
+let stage='';
+function add(text,who){const el=document.createElement('div');el.className='bubble '+who;el.textContent=text;body.appendChild(el);body.scrollTop=body.scrollHeight}
+function respond(text){
+ const t=text.toLowerCase();
+ if(t.includes('orçamento')||t.includes('orcamento')||t.includes('preço')||t.includes('valor')){
+   stage='quote'; return 'Claro! 😊 Posso coletar alguns dados para um pré-orçamento. Qual equipamento você precisa avaliar: notebook ou computador desktop?';
+ }
+ if(stage==='quote'&&(t.includes('notebook')||t.includes('desktop')||t.includes('computador')||t.includes('pc'))){
+   stage='model'; return 'Certo! Qual é a marca e o modelo do equipamento? Se não souber, pode me dizer qual problema está acontecendo.';
+ }
+ if(stage==='model'){
+   stage='problem'; return 'Obrigado! Agora descreva brevemente o defeito ou serviço desejado. Por exemplo: não liga, está lento ou precisa de formatação.';
+ }
+ if(stage==='problem'){
+   stage=''; return 'Perfeito! ✅ Os dados foram reunidos nesta demonstração. Em um sistema real, essas informações seriam encaminhadas à equipe da QualiData para análise. Nenhum orçamento oficial foi gerado.';
+ }
+ if(t.includes('assistência')||t.includes('assistencia')||t.includes('conserto')||t.includes('técnica')||t.includes('tecnica')||t.includes('notebook')||t.includes('computador')){
+   return 'Podemos configurar o agente para receber solicitações de assistência em notebooks e desktops. Para orientar melhor, você precisa de reparo, diagnóstico, formatação ou manutenção?';
+ }
+ if(t.includes('humano')||t.includes('pessoa')||t.includes('atendente')||t.includes('funcionário')||t.includes('funcionario')){
+   return 'Claro! 😊 Em uma versão conectada, posso encaminhar a conversa para um atendente. Nesta demo, o encaminhamento é apenas ilustrativo. A equipe poderá retornar após receber seus dados de contato.';
+ }
+ if(t.includes('horário')||t.includes('horario')||t.includes('telefone')||t.includes('endereço')||t.includes('endereco')){
+   return 'Para evitar passar uma informação desatualizada, o horário, endereço e contato oficial devem ser configurados pela empresa antes da publicação do agente.';
+ }
+ if(t.includes('olá')||t.includes('ola')||t.includes('bom dia')||t.includes('boa tarde')||t.includes('boa noite')){
+   return 'Olá! 😊 Que bom receber sua mensagem. Posso ajudar com assistência técnica, pré-orçamentos ou encaminhar uma solicitação à equipe. O que você precisa?';
+ }
+ return 'Entendi! 😊 Posso ajudar a iniciar uma solicitação de assistência técnica, coletar informações para um pré-orçamento ou orientar você para atendimento humano. Qual dessas opções prefere?';
+}
+form.addEventListener('submit',e=>{e.preventDefault();const v=input.value.trim();if(!v)return;add(v,'user');input.value='';setTimeout(()=>add(respond(v),'bot'),250)});
+function quickSend(v){input.value=v;form.requestSubmit()}
+function resetChat(){body.innerHTML='';stage='';add('Olá! 👋 Seja bem-vindo(a) à QualiData Tecnologia e Informática!\\n\\nSou o assistente virtual demonstrativo. Como posso ajudar?\\n\\nVocê pode perguntar sobre assistência técnica, solicitar um pré-orçamento ou pedir atendimento humano.','bot')}
+</script>
+</body>
+</html>
